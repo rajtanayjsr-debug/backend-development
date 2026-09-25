@@ -1,11 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HTML5 Elements Experiment</title>
 </head>
+
 <body>
-    
+
+    <header>
+        <h1>HTML5 Elements Demonstration</h1>
+        <p>This webpage demonstrates various HTML5 elements.</p>
+
+        <nav>
+            <a href="#text">Text</a> |
+            <a href="#lists">Lists</a> |
+            <a href="#table">Table</a> |
+            <a href="#form">Form</a> |
+            <a href="#media">Media</a>
+        </nav>
+    </header>
+
+    <hr>
+
+<section id="text">
+    <h2>Text Elements</h2>
+
+    <h3>Headings</h3>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <p>This is a paragraph element.</p>
+
+    <p>
+        This is <b>bold</b>,
+        <strong>strong</strong>,
+        <i>italic</i>,
+        <em>emphasized</em>,
+        <u>underlined</u>,
+        <mark>highlighted</mark>,
+        <small>small text</small>,
+        H<sub>2</sub>O and x<sup>2</sup>.
+    </p>
+
+    <blockquote>
+        This is an example of a blockquote element.
+    </blockquote>
+
+    <p>
+        HTML stands for
+        <abbr title="HyperText Markup Language">HTML</abbr>.
+    </p>
+</section>
+
+<hr>
+<section id="lists">
+    <h2>List Elements</h2>
+
+    <h3>Unordered List</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol>
+        <li>Frontend Development</li>
+        <li>Backend Development</li>
+        <li>Database</li>
+    </ol>
+
+    <h3>Description List</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Used to structure web pages.</dd>
+
+        <dt>CSS</dt>
+        <dd>Used to style web pages.</dd>
+    </dl>
+</section>
+
+<hr>
+<section id="table">
+    <h2>Table Element</h2>
+
+    <table border="1">
+        <caption>Student Information</caption>
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Raj</td>
+                <td>Backend Development</td>
+                <td>3rd Year</td>
+            </tr>
+
+            <tr>
+                <td>Student 2</td>
+                <td>Web Development</td>
+                <td>3rd Year</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="3">End of Student Data</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+<hr>
+<section id="form">
+    <h2>HTML5 Form Elements</h2>
+
+    <form>
+        <fieldset>
+            <legend>Student Registration Form</legend>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" min="1" max="100">
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob">
+            <br><br>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <br><br>
+
+            <label>Skills:</label>
+            <input type="checkbox" value="html"> HTML
+            <input type="checkbox" value="css"> CSS
+            <input type="checkbox" value="javascript"> JavaScript
+            <br><br>
+
+            <label for="course">Course:</label>
+            <select id="course">
+                <option>Backend Development</option>
+                <option>Frontend Development</option>
+                <option>Full Stack Development</option>
+            </select>
+            <br><br>
+
+            <label for="message">Message:</label>
+            <br>
+            <textarea id="message" rows="4" cols="30"></textarea>
+            <br><br>
+
+            <label for="color">Choose Color:</label>
+            <input type="color" id="color">
+            <br><br>
+
+            <label for="range">Range:</label>
+            <input type="range" id="range" min="0" max="100">
+            <br><br>
+
+            <label for="file">Upload File:</label>
+            <input type="file" id="file">
+            <br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+</section>
+
+<hr>
+<section id="media">
+    <h2>HTML5 Media Elements</h2>
+
+    <h3>Image</h3>
+    <figure>
+        <img src="https://picsum.photos/300/150"
+     alt="Sample HTML5 image"
+     width="300"
+     height="150">
+        <figcaption>Example of an HTML5 figure and image.</figcaption>
+    </figure>
+
+    <h3>Audio</h3>
+    <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h3>Video</h3>
+    <video width="320" height="240" controls>
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+</section>
+
+<hr>
+<section>
+    <h2>Semantic HTML5 Elements</h2>
+
+    <article>
+        <h3>Article Element</h3>
+        <p>
+            The article element represents independent and self-contained content.
+        </p>
+    </article>
+
+    <aside>
+        <h3>Aside Element</h3>
+        <p>
+            This content is related to the main content of the webpage.
+        </p>
+    </aside>
+
+    <details>
+        <summary>Click to view more information</summary>
+        <p>
+            The details and summary elements create expandable content.
+        </p>
+    </details>
+
+    <h3>Progress Element</h3>
+    <label>Course Progress:</label>
+    <progress value="70" max="100">70%</progress>
+
+    <h3>Meter Element</h3>
+    <label>HTML Skill Level:</label>
+    <meter value="8" min="0" max="10">8 out of 10</meter>
+
+    <h3>Time Element</h3>
+    <p>
+        Lab conducted on
+        <time datetime="2026-09-25">25 September 2026</time>.
+    </p>
+</section>
+
+<hr>
+
+<footer>
+    <p>&copy; 2026 HTML5 Experiment | Backend Development Lab</p>
+</footer>
 </body>
+
 </html>
