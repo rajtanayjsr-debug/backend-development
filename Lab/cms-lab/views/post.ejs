@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %> - Simple CMS</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <h1 class="logo"><a href="/posts">Simple CMS</a></h1>
+            <nav>
+                <a href="/posts" class="btn btn-secondary">&larr; Back to All Posts</a>
+                <a href="/posts/new" class="btn btn-primary">+ New Post</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <% if (errorMessage || !post) { %>
+            <div class="alert alert-error">
+                <h2>Post Not Found</h2>
+                <p><%= errorMessage || "The requested post could not be found." %></p>
+                <a href="/posts" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Return to Posts</a>
+            </div>
+        <% } else { %>
+            <article class="single-post">
+                <header class="post-header">
+                    <h1 class="post-title"><%= post.title %></h1>
+                    <div class="post-meta">
+                        <span class="author">By <%= post.author %></span>
+                        <time class="date"><%= formatDate(post.createdAt) %></time>
+                    </div>
+                </header>
+
+                <div class="post-body">
+                    <% post.content.split('\n').forEach(paragraph => { %>
+                        <% if (paragraph.trim()) { %>
+                            <p><%= paragraph %></p>
+                        <% } %>
+                    <% }) %>
+                </div>
+
+                <div class="post-footer">
+                    <a href="/posts" class="btn btn-secondary">&larr; Back to All Posts</a>
+                </div>
+            </article>
+        <% } %>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <%= new Date().getFullYear() %> Simple CMS - Backend Development Lab</p>
+        </div>
+    </footer>
+</body>
+</html>

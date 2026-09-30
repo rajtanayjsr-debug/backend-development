@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %> - Simple CMS</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <h1 class="logo"><a href="/posts">Simple CMS</a></h1>
+            <nav>
+                <a href="/posts/new" class="btn btn-primary">+ Create New Post</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="posts-section">
+            <h2>Blog Posts</h2>
+
+            <% if (!posts || posts.length === 0) { %>
+                <div class="empty-state">
+                    <p>No posts available yet.</p>
+                    <a href="/posts/new" class="btn btn-secondary">Write the first post</a>
+                </div>
+            <% } else { %>
+                <div class="posts-list">
+                    <% posts.forEach(post => { %>
+                        <article class="post-card">
+                            <h3 class="post-title">
+                                <a href="/posts/<%= post._id %>"><%= post.title %></a>
+                            </h3>
+                            <div class="post-meta">
+                                <span class="author">By <%= post.author %></span>
+                                <time class="date"><%= formatDate(post.createdAt) %></time>
+                            </div>
+                        </article>
+                    <% }) %>
+                </div>
+            <% } %>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <%= new Date().getFullYear() %> Simple CMS - Backend Development Lab</p>
+        </div>
+    </footer>
+</body>
+</html>
