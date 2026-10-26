@@ -3,3 +3,4 @@ node_modules/
 Theory/Unit_3Djangoproject/venv/
 __pycache__/
 *.pyc
+venv/
