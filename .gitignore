@@ -4,3 +4,7 @@ Theory/Unit_3Djangoproject/venv/
 __pycache__/
 *.pyc
 venv/
+
+# Node/Docker generated files
+student-management/node_modules/
+student-management/student-management.tar
