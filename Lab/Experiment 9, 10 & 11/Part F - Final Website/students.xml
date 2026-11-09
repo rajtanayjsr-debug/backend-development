@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students>
+
+    <student id="101">
+        <name>Aarav</name>
+        <course>B.Tech CSE</course>
+    </student>
+
+    <student id="102">
+        <name>Meera</name>
+        <course>B.Tech IT</course>
+    </student>
+
+    <student id="103">
+        <name>Kabir</name>
+        <course>B.Tech CSE</course>
+    </student>
+
+</students>

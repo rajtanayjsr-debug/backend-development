@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Directory - Fetch XML</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Student Directory</h1>
+
+        <h2>Part D - AJAX using Fetch API (JSON & XML)</h2>
+
+        <button id="loadJson">
+            Load JSON Students
+        </button>
+
+        <button id="loadXml">
+            Load XML Students
+        </button>
+
+        <p id="status" role="status">
+            Select an option to load student data.
+        </p>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTable">
+            </tbody>
+
+        </table>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

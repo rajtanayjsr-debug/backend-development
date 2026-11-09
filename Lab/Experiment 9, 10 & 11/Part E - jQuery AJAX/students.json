@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": 101,
+      "name": "Aarav",
+      "course": "B.Tech CSE"
+    },
+    {
+      "id": 102,
+      "name": "Meera",
+      "course": "B.Tech IT"
+    },
+    {
+      "id": 103,
+      "name": "Kabir",
+      "course": "B.Tech CSE"
+    }
+  ]
+}

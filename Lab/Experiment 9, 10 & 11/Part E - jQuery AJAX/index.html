@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Directory - jQuery AJAX</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Student Directory</h1>
+
+        <h2>Part E - AJAX using jQuery</h2>
+
+        <button id="loadJson">
+            Load Students using jQuery AJAX
+        </button>
+
+        <p id="status" role="status">
+            Click the button to load student data.
+        </p>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTable">
+            </tbody>
+
+        </table>
+
+    </main>
+
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

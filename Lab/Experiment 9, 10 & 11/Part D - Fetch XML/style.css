@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fa;
+    color: #202a35;
+}
+
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+button {
+    margin: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccd3dc;
+    text-align: left;
+}
+
+th {
+    background: #e7eef8;
+}
+
+#status {
+    min-height: 24px;
+}

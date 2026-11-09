@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Directory - Final Website</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Student Directory</h1>
+
+        <h2>Part F - Final AJAX Application</h2>
+
+        <div class="buttons">
+
+            <button id="loadJson">
+                Fetch JSON
+            </button>
+
+            <button id="loadXml">
+                Fetch XML
+            </button>
+
+            <button id="loadJquery">
+                jQuery AJAX
+            </button>
+
+        </div>
+
+        <p id="status" role="status">
+            Select a method to load student data.
+        </p>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTable">
+            </tbody>
+
+        </table>
+
+    </main>
+
+    <!-- jQuery must load before app.js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
