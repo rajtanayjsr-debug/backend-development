@@ -6,13 +6,13 @@ This repository contains my Backend Development coursework, including **laborato
 
 ---
 
-## 📂 Repository Navigation
+## 📂 Website Navigation
 
 ### 🧪 Laboratory Experiments
 
-The **Lab** folder contains practical experiments completed as part of the Backend Development course.
+The **Lab** section contains practical experiments completed as part of the Backend Development course.
 
-🔗 **[Open Lab Folder](https://github.com/rajtanayjsr-debug/backend-development/tree/main/Lab)**
+🌐 **[Open Laboratory Experiments](https://rajtanayjsr-debug.github.io/backend-development/Lab/)**
 
 The laboratory work includes practical implementation of concepts such as:
 
@@ -31,9 +31,9 @@ The laboratory work includes practical implementation of concepts such as:
 
 ### 📚 Theory
 
-The **Theory** folder contains theory assignments and coursework related to Backend Development.
+The **Theory** section contains theory assignments and coursework related to Backend Development.
 
-🔗 **[Open Theory Folder](/Theory/report.md)**
+🌐 **[Open Theory Section](https://rajtanayjsr-debug.github.io/backend-development/Theory/)**
 
 The theory work covers backend concepts, databases, APIs, server-side development, PostgreSQL, JSON/JSONB, and other course topics.
 
@@ -43,7 +43,7 @@ The theory work covers backend concepts, databases, APIs, server-side developmen
 
 A backend-based **Student Management System** developed as part of the coursework.
 
-🔗 **[Open Student Management Project](https://github.com/rajtanayjsr-debug/backend-development/tree/main/student-management)**
+🌐 **[Open Student Management Project](https://rajtanayjsr-debug.github.io/backend-development/student-management/)**
 
 The project demonstrates practical backend development and server-side application concepts.
 
@@ -68,15 +68,15 @@ The laboratory section contains multiple Backend Development experiments.
 
 ### 🔗 View Laboratory Work
 
-➡️ **[Open Complete Lab Folder](https://github.com/rajtanayjsr-debug/backend-development/tree/main/Lab)**
+➡️ **[Open Complete Laboratory Website](https://rajtanayjsr-debug.github.io/backend-development/Lab/)**
 
 ---
 
 # 📚 Theory & Assignments
 
-Theory assignments and related academic work are maintained separately inside the Theory folder.
+Theory assignments and related academic work are maintained separately inside the Theory section.
 
-➡️ **[Open Theory Folder](https://github.com/rajtanayjsr-debug/backend-development/tree/main/Theory)**
+➡️ **[Open Theory Website](https://rajtanayjsr-debug.github.io/backend-development/Theory/)**
 
 ---
 
@@ -86,7 +86,7 @@ Theory assignments and related academic work are maintained separately inside th
 
 The Student Management System demonstrates the implementation of backend and server-side development concepts.
 
-➡️ **[Open Student Management System](https://github.com/rajtanayjsr-debug/backend-development/tree/main/student-management)**
+➡️ **[Open Student Management System](https://rajtanayjsr-debug.github.io/backend-development/student-management/)**
 
 ---
 
@@ -118,6 +118,7 @@ The Student Management System demonstrates the implementation of backend and ser
 - Docker
 - Git
 - GitHub
+- GitHub Pages
 
 ---
 
@@ -144,16 +145,17 @@ The repository demonstrates practical implementation of various Backend Developm
 - Backend project development
 - Docker containerization
 - Version control using Git and GitHub
+- Web deployment using GitHub Pages
 
 ---
 
 # 🔗 Quick Navigation
 
-| Section | Description | Link |
+| Section | Description | Live Website |
 |---|---|---|
-| 🧪 Lab | Backend Development laboratory experiments | [Open Lab](https://github.com/rajtanayjsr-debug/backend-development/tree/main/Lab) |
-| 📚 Theory | Theory assignments and coursework | [Open Theory](https://github.com/rajtanayjsr-debug/backend-development/tree/main/Theory) |
-| 🎓 Student Management | Backend Student Management project | [Open Project](https://github.com/rajtanayjsr-debug/backend-development/tree/main/student-management) |
+| 🧪 Lab | Backend Development laboratory experiments | [Open Lab](https://rajtanayjsr-debug.github.io/backend-development/Lab/) |
+| 📚 Theory | Theory assignments and coursework | [Open Theory](https://rajtanayjsr-debug.github.io/backend-development/Theory/) |
+| 🎓 Student Management | Backend Student Management project | [Open Project](https://rajtanayjsr-debug.github.io/backend-development/student-management/) |
 
 ---
 
@@ -163,7 +165,7 @@ The purpose of this repository is to maintain an organized record of my **Backen
 
 It serves as a collection of laboratory experiments, theory assignments, database work, API implementations, and backend projects completed throughout the course.
 
-The repository also demonstrates my practical understanding of backend technologies and the use of Git and GitHub for version control and project management.
+The repository also demonstrates my practical understanding of backend technologies and the use of Git and GitHub for version control, project management, and deployment.
 
 ---
 
