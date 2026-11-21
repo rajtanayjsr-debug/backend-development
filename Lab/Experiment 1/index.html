@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1 | Git Version Control</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+
+        header {
+            background: #161b22;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid #30363d;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #8b949e;
+            margin-top: 7px;
+        }
+
+        nav {
+            background: #010409;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #58a6ff;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            color: #c9d1d9;
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 22px;
+            line-height: 2;
+            color: #c9d1d9;
+        }
+
+        .command {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 7px;
+            padding: 15px;
+            margin-top: 12px;
+            font-family: monospace;
+            color: #7ee787;
+            overflow-x: auto;
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .step {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .step strong {
+            color: #58a6ff;
+        }
+
+        .success {
+            border-left: 4px solid #238636;
+            background: #101c14;
+            padding: 18px;
+            margin-top: 15px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 Experiment 1</h1>
+    <p>Introduction to Git & Version Control</p>
+    <p>Backend Development Laboratory</p>
+</header>
+
+<nav>
+    <a href="../../index.html">Home</a>
+    <a href="../index.html">← Laboratory</a>
+</nav>
+
+<div class="container">
+
+    <div class="section">
+        <h2>🎯 Objective</h2>
+        <p>
+            To understand the fundamentals of Git version control,
+            configure Git identity, verify repository connectivity,
+            track files, stage changes and create commits.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>📚 What is Git?</h2>
+        <p>
+            Git is a Distributed Version Control System used to track
+            changes in source code and maintain the history of a project.
+            It allows developers to work collaboratively while managing
+            different versions of their code.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>⚙️ Git Configuration</h2>
+
+        <p>The Git username and email were verified using:</p>
+
+        <div class="command">
+git config user.name<br>
+git config user.email
+        </div>
+
+        <p style="margin-top:15px;">Configured identity:</p>
+
+        <div class="command">
+Username: rajtanaysingh<br>
+Email: rajtanaysr@gmail.com
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Remote Repository</h2>
+
+        <p>The connected GitHub repository was verified using:</p>
+
+        <div class="command">
+git remote -v
+        </div>
+
+        <p style="margin-top:15px;">
+            Repository:
+            rajtanaysr-debug/backend-development
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>🔄 Git Workflow Demonstrated</h2>
+
+        <div class="flow">
+
+            <div class="step">
+                <strong>1. Create</strong><br><br>
+                Create a file
+            </div>
+
+            <div class="step">
+                <strong>2. Track</strong><br><br>
+                Check git status
+            </div>
+
+            <div class="step">
+                <strong>3. Stage</strong><br><br>
+                git add
+            </div>
+
+            <div class="step">
+                <strong>4. Commit</strong><br><br>
+                git commit
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💻 Commands Executed</h2>
+
+        <div class="command">
+echo "Backend Development - Git Version Control Experiment" &gt; git-demo.txt
+        </div>
+
+        <div class="command">
+git status
+        </div>
+
+        <div class="command">
+git add git-demo.txt
+        </div>
+
+        <div class="command">
+git commit -m "Experiment 1: Git version control basics"
+        </div>
+
+        <div class="command">
+git log -1 --oneline
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>✅ Result</h2>
+
+        <div class="success">
+            Experiment completed successfully. Git configuration and
+            repository connectivity were verified, a new file was tracked
+            and staged, and the changes were successfully committed to the
+            local Git repository.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎓 Learning Outcome</h2>
+
+        <ul>
+            <li>Understood the purpose of version control.</li>
+            <li>Verified Git username and email configuration.</li>
+            <li>Verified the connection between local Git and GitHub.</li>
+            <li>Understood untracked and staged files.</li>
+            <li>Used git add to stage changes.</li>
+            <li>Used git commit to save a project snapshot.</li>
+            <li>Used git log to inspect commit history.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    Experiment 1 | Backend Development | Raj Tanay Singh
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Lab | Backend Development</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+
+        header {
+            background: #161b22;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #8b949e;
+            margin-top: 6px;
+        }
+
+        nav {
+            background: #010409;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #58a6ff;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            color: #c9d1d9;
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 22px;
+            line-height: 2;
+            color: #c9d1d9;
+        }
+
+        .structure {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            font-family: monospace;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .command {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 7px;
+            padding: 15px;
+            margin-top: 12px;
+            font-family: monospace;
+            color: #7ee787;
+        }
+
+        .screenshot {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 1px solid #30363d;
+        }
+
+        .note {
+            border-left: 4px solid #d29922;
+            background: #1c1810;
+            padding: 18px;
+            margin-top: 18px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        .success {
+            border-left: 4px solid #238636;
+            background: #101c14;
+            padding: 18px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 CMS Lab</h1>
+    <p>Content Management System</p>
+    <p>Backend Development Laboratory</p>
+</header>
+
+<nav>
+    <a href="../../index.html">Home</a>
+    <a href="../index.html">← Laboratory</a>
+</nav>
+
+<div class="container">
+
+    <div class="section">
+        <h2>🎯 Objective</h2>
+
+        <p>
+            To develop a backend Content Management System using
+            Node.js and MongoDB and understand server-side application
+            development and database integration.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>📌 Project Overview</h2>
+
+        <p>
+            This laboratory exercise demonstrates the development of a
+            Content Management System with a Node.js backend and MongoDB
+            database connectivity.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>⚙️ Technologies Used</h2>
+
+        <ul>
+            <li>Node.js</li>
+            <li>JavaScript</li>
+            <li>MongoDB</li>
+            <li>npm</li>
+            <li>Server-side Web Development</li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>📂 Project Structure</h2>
+
+        <div class="structure">
+cms-lab/<br>
+├── public/<br>
+├── views/<br>
+├── app.js<br>
+├── app.pure-mongo.js<br>
+├── package.json<br>
+├── package-lock.json<br>
+├── seed.js<br>
+├── README.md<br>
+└── screenshot.png
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>💻 Backend Implementation</h2>
+
+        <p>
+            The project contains multiple backend implementations.
+            The main server logic is contained in app.js, while
+            app.pure-mongo.js demonstrates MongoDB interaction.
+            The seed.js file is used for inserting initial data.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>🚀 Running the Project</h2>
+
+        <p>Install the required dependencies:</p>
+
+        <div class="command">
+npm install
+        </div>
+
+        <p style="margin-top:18px;">Run the application:</p>
+
+        <div class="command">
+node app.js
+        </div>
+
+        <div class="note">
+            <strong>Note:</strong> GitHub Pages hosts static content only.
+            The Node.js and MongoDB backend cannot execute directly on
+            GitHub Pages. This page presents the implementation and output
+            of the CMS project.
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>🖼️ Project Output</h2>
+
+        <p>
+            Screenshot of the implemented CMS application:
+        </p>
+
+        <img
+            src="screenshot.png"
+            alt="CMS Application Output"
+            class="screenshot"
+        >
+    </div>
+
+
+    <div class="section">
+        <h2>🎓 Learning Outcome</h2>
+
+        <ul>
+            <li>Understood the architecture of a backend CMS.</li>
+            <li>Worked with Node.js server-side development.</li>
+            <li>Integrated MongoDB with a backend application.</li>
+            <li>Used npm for dependency management.</li>
+            <li>Worked with server-side views and public resources.</li>
+            <li>Understood database seeding.</li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>✅ Result</h2>
+
+        <div class="success">
+            The Content Management System backend was successfully
+            implemented using Node.js and MongoDB.
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    CMS Lab | Backend Development | Raj Tanay Singh
+</footer>
+
+</body>
+</html>

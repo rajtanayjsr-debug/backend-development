@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 15 | Django To-Do Application</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+
+        header {
+            background: #161b22;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #8b949e;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #010409;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #58a6ff;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            color: #c9d1d9;
+            line-height: 1.7;
+        }
+
+        .features {
+            margin-top: 15px;
+            padding-left: 22px;
+            line-height: 2;
+            color: #c9d1d9;
+        }
+
+        .structure {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            font-family: monospace;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .note {
+            border-left: 4px solid #d29922;
+            background: #1c1810;
+            padding: 18px;
+            margin-top: 18px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        .command {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            padding: 14px;
+            margin-top: 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #7ee787;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 Experiment 15</h1>
+    <p>Django To-Do Application</p>
+    <p>Backend Development Laboratory</p>
+</header>
+
+<nav>
+    <a href="../../index.html">Home</a>
+    <a href="../index.html">← Laboratory</a>
+</nav>
+
+<div class="container">
+
+    <div class="section">
+        <h2>📌 Project Overview</h2>
+
+        <p>
+            Experiment 15 demonstrates backend web development using
+            Django. A To-Do application is implemented using Django's
+            project and application architecture with SQLite database
+            integration.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>⚙️ Technologies Used</h2>
+
+        <ul class="features">
+            <li>Python</li>
+            <li>Django</li>
+            <li>SQLite Database</li>
+            <li>HTML</li>
+            <li>Django Templates</li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>📂 Project Structure</h2>
+
+        <div class="structure">
+Experiment 15/<br>
+├── todo/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Django Application<br>
+├── todo_project/ &nbsp; Django Project Configuration<br>
+├── db.sqlite3 &nbsp;&nbsp;&nbsp;&nbsp; SQLite Database<br>
+├── manage.py &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Django Management Script<br>
+└── index.html &nbsp;&nbsp;&nbsp;&nbsp; Experiment Presentation Page
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>🚀 Running the Django Project</h2>
+
+        <p>
+            The Django application runs using Django's development server.
+        </p>
+
+        <div class="command">
+            python manage.py runserver
+        </div>
+
+        <div class="note">
+            <strong>Note:</strong> GitHub Pages hosts static websites only.
+            Django requires a Python server, so the backend application
+            cannot execute directly on GitHub Pages. This page documents
+            the Django implementation included in the repository.
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>🎯 Learning Outcome</h2>
+
+        <p>
+            This experiment demonstrates the structure of a Django project,
+            creation of a Django application, database integration using
+            SQLite, and development of a server-side web application.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    Experiment 15 | Backend Development | Raj Tanay Singh
+</footer>
+
+</body>
+</html>

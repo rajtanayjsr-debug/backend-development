@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2 | Backend Development</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+
+        header {
+            background: #161b22;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid #30363d;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #8b949e;
+        }
+
+        nav {
+            background: #010409;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .container h2 {
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .card h3 {
+            color: #58a6ff;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #8b949e;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #238636;
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #2ea043;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 Experiment 2</h1>
+    <p>HTML & CSS Implementation</p>
+</header>
+
+<nav>
+    <a href="../../index.html">Home</a>
+    <a href="../index.html">← Laboratory</a>
+</nav>
+
+<div class="container">
+
+    <h2>Experiment Tasks</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Inline CSS</h3>
+            <p>Implementation of CSS using inline styling.</p>
+            <a class="btn" href="index-inline.html">Open →</a>
+        </div>
+
+        <div class="card">
+            <h3>Internal CSS</h3>
+            <p>Implementation of CSS using internal styles.</p>
+            <a class="btn" href="index-internal.html">Open →</a>
+        </div>
+
+        <div class="card">
+            <h3>External CSS</h3>
+            <p>Implementation using an external CSS stylesheet.</p>
+            <a class="btn" href="index-external.html">Open →</a>
+        </div>
+
+        <div class="card">
+            <h3>CSS Selectors</h3>
+            <p>Demonstration of different CSS selectors.</p>
+            <a class="btn" href="index-selectors.html">Open →</a>
+        </div>
+
+        <div class="card">
+            <h3>CSS Layout</h3>
+            <p>Implementation of webpage layout techniques.</p>
+            <a class="btn" href="index-layout.html">Open →</a>
+        </div>
+
+        <div class="card">
+            <h3>CSS Animations</h3>
+            <p>Demonstration of CSS animations and effects.</p>
+            <a class="btn" href="index-animations.html">Open →</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    Experiment 2 | Backend Development | Raj Tanay Singh
+</footer>
+
+</body>
+</html>

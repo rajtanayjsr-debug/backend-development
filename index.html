@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Development | Raj Tanay Singh</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+
+        header {
+            background: #161b22;
+            padding: 55px 20px;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #8b949e;
+            font-size: 18px;
+        }
+
+        nav {
+            background: #010409;
+            padding: 18px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #58a6ff;
+        }
+
+        .card p {
+            color: #8b949e;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #238636;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #2ea043;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 Backend Development</h1>
+    <p>Laboratory Experiments, Theory Work & Backend Projects</p>
+    <p style="margin-top:10px;">Raj Tanay Singh</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#lab">Laboratory</a>
+    <a href="#theory">Theory</a>
+    <a href="#project">Project</a>
+</nav>
+
+<main class="container" id="home">
+
+    <section id="lab">
+        <h2>🧪 Laboratory Experiments</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Laboratory Work</h3>
+                <p>
+                    Explore all Backend Development laboratory experiments,
+                    implementations and outputs.
+                </p>
+                <a class="button" href="Lab/">View Experiments →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="theory" style="margin-top:70px;">
+        <h2>📚 Theory</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Theory Work</h3>
+                <p>
+                    Backend Development theory assignments, concepts and
+                    coursework.
+                </p>
+                <a class="button" href="Theory/">View Theory →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="project" style="margin-top:70px;">
+        <h2>🎓 Project</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Student Management System</h3>
+                <p>
+                    Backend-based Student Management System developed as
+                    part of the coursework.
+                </p>
+                <a class="button" href="student-management/">
+                    View Project →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Backend Development Coursework | Raj Tanay Singh</p>
+</footer>
+
+</body>
+</html>

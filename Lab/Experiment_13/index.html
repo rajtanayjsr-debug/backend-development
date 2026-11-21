@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 13 | MongoDB & Mongoose</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+
+        header {
+            background: #161b22;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #8b949e;
+            margin-top: 6px;
+        }
+
+        nav {
+            background: #010409;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #58a6ff;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            color: #c9d1d9;
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 22px;
+            line-height: 2;
+            color: #c9d1d9;
+        }
+
+        .structure {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            font-family: monospace;
+            line-height: 1.8;
+        }
+
+        .command {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 7px;
+            padding: 15px;
+            margin-top: 12px;
+            font-family: monospace;
+            color: #7ee787;
+        }
+
+        .note {
+            border-left: 4px solid #d29922;
+            background: #1c1810;
+            padding: 18px;
+            margin-top: 18px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        .success {
+            border-left: 4px solid #238636;
+            background: #101c14;
+            padding: 18px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 Experiment 13</h1>
+    <p>MongoDB & Mongoose Integration</p>
+    <p>Backend Development Laboratory</p>
+</header>
+
+<nav>
+    <a href="../../index.html">Home</a>
+    <a href="../index.html">← Laboratory</a>
+</nav>
+
+<div class="container">
+
+    <div class="section">
+        <h2>🎯 Objective</h2>
+
+        <p>
+            To understand database connectivity in a Node.js backend
+            application using MongoDB and Mongoose.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>📌 Project Overview</h2>
+
+        <p>
+            This experiment demonstrates the integration of MongoDB
+            with a Node.js application using Mongoose. Mongoose provides
+            a structured way to interact with MongoDB from JavaScript.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>⚙️ Technologies Used</h2>
+
+        <ul>
+            <li>Node.js</li>
+            <li>JavaScript</li>
+            <li>MongoDB</li>
+            <li>Mongoose</li>
+            <li>npm</li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>📂 Project Structure</h2>
+
+        <div class="structure">
+Experiment_13/<br>
+│<br>
+├── mongoose-demo/<br>
+│ &nbsp;&nbsp;├── package.json<br>
+│ &nbsp;&nbsp;├── package-lock.json<br>
+│ &nbsp;&nbsp;├── server.js<br>
+│ &nbsp;&nbsp;└── node_modules/<br>
+│<br>
+└── index.html
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>🖥️ Backend Server</h2>
+
+        <p>
+            The main backend implementation is contained in
+            <strong>server.js</strong>. The project dependencies and
+            scripts are managed using npm and package.json.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>🚀 Running the Project</h2>
+
+        <p>Navigate to the Mongoose project directory:</p>
+
+        <div class="command">
+cd mongoose-demo
+        </div>
+
+        <p style="margin-top:18px;">Install dependencies:</p>
+
+        <div class="command">
+npm install
+        </div>
+
+        <p style="margin-top:18px;">Run the backend:</p>
+
+        <div class="command">
+node server.js
+        </div>
+
+        <div class="note">
+            <strong>Note:</strong> GitHub Pages supports static websites
+            only. Node.js and MongoDB require a backend server and therefore
+            cannot execute directly on GitHub Pages. This page presents the
+            backend implementation included in the repository.
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h2>🎓 Learning Outcome</h2>
+
+        <ul>
+            <li>Understood MongoDB integration with Node.js.</li>
+            <li>Used Mongoose for MongoDB connectivity.</li>
+            <li>Worked with npm dependencies.</li>
+            <li>Understood the role of package.json.</li>
+            <li>Implemented server-side JavaScript using Node.js.</li>
+            <li>Understood backend database connectivity.</li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>✅ Result</h2>
+
+        <div class="success">
+            MongoDB and Mongoose backend integration was implemented
+            successfully using Node.js.
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    Experiment 13 | Backend Development | Raj Tanay Singh
+</footer>
+
+</body>
+</html>
