@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Student</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fa;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Add Student</h1>
+
+        <form action="/students" method="POST">
+
+            <label for="name">
+                Student Name:
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+            >
+
+
+            <label for="course">
+                Course:
+            </label>
+
+            <input
+                type="text"
+                id="course"
+                name="course"
+                required
+            >
+
+
+            <button type="submit">
+                Add Student
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

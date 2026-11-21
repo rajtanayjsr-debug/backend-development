@@ -33,7 +33,7 @@ The laboratory work includes practical implementation of concepts such as:
 
 The **Theory** folder contains theory assignments and coursework related to Backend Development.
 
-🔗 **[Open Theory Folder](https://github.com/rajtanayjsr-debug/backend-development/tree/main/Theory)**
+🔗 **[Open Theory Folder](/Theory/report.md)**
 
 The theory work covers backend concepts, databases, APIs, server-side development, PostgreSQL, JSON/JSONB, and other course topics.
 
