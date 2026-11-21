@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 13 - MongoDB & Mongoose</title>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f6f8fa;
+            color: #1f2328;
+        }
+
+        header {
+            background: #24292f;
+            color: white;
+            padding: 35px 20px;
+        }
+
+        header .content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header h1 { margin: 0 0 10px; }
+
+        header p {
+            margin: 0;
+            color: #d0d7de;
+        }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #d0d7de;
+            padding: 15px 20px;
+        }
+
+        nav div {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0969da;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        .intro {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .intro h2 { margin-top: 0; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 22px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        .filename {
+            background: #f6f8fa;
+            border-radius: 5px;
+            padding: 9px 10px;
+            font-family: monospace;
+            margin-bottom: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .output {
+            background: #1f883d;
+            color: white;
+        }
+
+        .code-button {
+            background: #0969da;
+            color: white;
+        }
+
+        #codeViewer {
+            display: none;
+            margin-top: 35px;
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .viewer-header {
+            background: #24292f;
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .viewer-header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .close-button {
+            background: #cf222e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 13px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        pre {
+            margin: 0;
+            padding: 25px;
+            background: #0d1117;
+            color: #e6edf3;
+            overflow: auto;
+            max-height: 650px;
+            white-space: pre;
+            line-height: 1.55;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #d0d7de;
+            color: #57606a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="content">
+        <h1>Experiment 13: MongoDB & Mongoose</h1>
+        <p>Backend Development Laboratory</p>
+    </div>
+</header>
+
+<nav>
+    <div>
+        <a href="../index.html">← All Experiments</a>
+        <a href="../../index.html">Home</a>
+    </div>
+</nav>
+
+<main>
+
+    <section class="intro">
+        <h2>Mongoose Demo</h2>
+
+        <p>
+            This experiment demonstrates backend development using
+            Node.js, MongoDB and Mongoose.
+        </p>
+
+        <p>
+            Click <strong>View Output</strong> to open the frontend page
+            and <strong>View Code</strong> to inspect the actual project
+            source files.
+        </p>
+    </section>
+
+    <div class="grid">
+
+        <div class="card">
+            <h2>Frontend</h2>
+
+            <div class="filename">mongoose-demo/index.html</div>
+
+            <div class="buttons">
+
+                <a class="button output"
+                   href="mongoose-demo/index.html"
+                   target="_blank">
+                    ▶ View Output
+                </a>
+
+                <button class="button code-button"
+                        onclick="showCode('mongoose-demo/index.html')">
+                    &lt;/&gt; View Code
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h2>Backend Server</h2>
+
+            <div class="filename">mongoose-demo/server.js</div>
+
+            <button class="button code-button"
+                    onclick="showCode('mongoose-demo/server.js')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h2>Project Configuration</h2>
+
+            <div class="filename">mongoose-demo/package.json</div>
+
+            <button class="button code-button"
+                    onclick="showCode('mongoose-demo/package.json')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+    </div>
+
+
+    <section id="codeViewer">
+
+        <div class="viewer-header">
+
+            <h2 id="codeTitle">Source Code</h2>
+
+            <button class="close-button"
+                    onclick="closeCode()">
+                ✕ Close Code
+            </button>
+
+        </div>
+
+        <pre><code id="sourceCode"></code></pre>
+
+    </section>
+
+</main>
+
+
+<footer>
+    Experiment 13 | MongoDB & Mongoose | Raj Tanay Singh
+</footer>
+
+
+<script>
+
+async function showCode(file) {
+
+    const viewer = document.getElementById("codeViewer");
+    const title = document.getElementById("codeTitle");
+    const source = document.getElementById("sourceCode");
+
+    viewer.style.display = "block";
+
+    title.textContent = "Source Code — " + file;
+    source.textContent = "Loading actual source code...";
+
+    try {
+
+        const response = await fetch(file);
+
+        if (!response.ok) {
+            throw new Error("Unable to load " + file);
+        }
+
+        const code = await response.text();
+
+        source.textContent = code;
+
+    } catch (error) {
+
+        source.textContent =
+            "Error loading source code: " + error.message;
+
+    }
+
+    viewer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+
+function closeCode() {
+    document.getElementById("codeViewer").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

@@ -3,118 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiment 15 | Django To-Do Application</title>
+
+    <title>Experiment 15 - Django To-Do Application</title>
 
     <style>
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background: #0d1117;
-            color: #e6edf3;
+            background: #f6f8fa;
+            color: #1f2328;
         }
 
         header {
-            background: #161b22;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 1px solid #30363d;
+            background: #24292f;
+            color: white;
+            padding: 35px 20px;
+        }
+
+        header .content {
+            max-width: 1100px;
+            margin: auto;
         }
 
         header h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
         }
 
         header p {
-            color: #8b949e;
-            line-height: 1.6;
+            margin: 0;
+            color: #d0d7de;
         }
 
         nav {
-            background: #010409;
-            padding: 18px;
-            text-align: center;
+            background: white;
+            border-bottom: 1px solid #d0d7de;
+            padding: 15px 20px;
+        }
+
+        nav div {
+            max-width: 1100px;
+            margin: auto;
         }
 
         nav a {
-            color: #58a6ff;
             text-decoration: none;
+            color: #0969da;
             font-weight: bold;
-            margin: 0 15px;
+            margin-right: 25px;
         }
 
-        .container {
-            max-width: 1000px;
+        main {
+            max-width: 1100px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 35px 20px;
         }
 
-        .section {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 28px;
-            margin-bottom: 25px;
-        }
-
-        .section h2 {
-            color: #58a6ff;
-            margin-bottom: 15px;
-        }
-
-        .section p {
-            color: #c9d1d9;
-            line-height: 1.7;
-        }
-
-        .features {
-            margin-top: 15px;
-            padding-left: 22px;
-            line-height: 2;
-            color: #c9d1d9;
-        }
-
-        .structure {
-            background: #0d1117;
-            border: 1px solid #30363d;
+        .intro {
+            background: white;
+            border: 1px solid #d0d7de;
             border-radius: 8px;
-            padding: 20px;
-            margin-top: 15px;
-            font-family: monospace;
-            line-height: 1.8;
-            overflow-x: auto;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            margin-top: 0;
         }
 
         .note {
-            border-left: 4px solid #d29922;
-            background: #1c1810;
-            padding: 18px;
+            background: #fff8c5;
+            border: 1px solid #d4a72c;
+            border-radius: 7px;
+            padding: 15px;
             margin-top: 18px;
-            border-radius: 5px;
-            line-height: 1.6;
         }
 
-        .command {
-            background: #0d1117;
-            border: 1px solid #30363d;
-            padding: 14px;
-            margin-top: 12px;
-            border-radius: 6px;
+        .section-title {
+            margin-top: 35px;
+            margin-bottom: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 22px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .filename {
+            background: #f6f8fa;
+            border-radius: 5px;
+            padding: 9px 10px;
             font-family: monospace;
-            color: #7ee787;
+            margin-bottom: 18px;
+            word-break: break-word;
+        }
+
+        .button {
+            display: inline-block;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .code-button {
+            background: #0969da;
+            color: white;
+        }
+
+        #codeViewer {
+            display: none;
+            margin-top: 35px;
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .viewer-header {
+            background: #24292f;
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .viewer-header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .close-button {
+            background: #cf222e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 13px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        pre {
+            margin: 0;
+            padding: 25px;
+            background: #0d1117;
+            color: #e6edf3;
+            overflow: auto;
+            max-height: 650px;
+            white-space: pre;
+            line-height: 1.55;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
         }
 
         footer {
+            margin-top: 50px;
+            padding: 25px;
             text-align: center;
-            padding: 30px;
-            border-top: 1px solid #30363d;
-            color: #8b949e;
-            margin-top: 40px;
+            border-top: 1px solid #d0d7de;
+            color: #57606a;
         }
     </style>
 </head>
@@ -122,92 +193,281 @@
 <body>
 
 <header>
-    <h1>🧪 Experiment 15</h1>
-    <p>Django To-Do Application</p>
-    <p>Backend Development Laboratory</p>
+    <div class="content">
+        <h1>Experiment 15: Django To-Do Application</h1>
+        <p>Backend Development Laboratory</p>
+    </div>
 </header>
 
 <nav>
-    <a href="../../index.html">Home</a>
-    <a href="../index.html">← Laboratory</a>
+    <div>
+        <a href="../index.html">← All Experiments</a>
+        <a href="../../index.html">Home</a>
+    </div>
 </nav>
 
-<div class="container">
+<main>
 
-    <div class="section">
-        <h2>📌 Project Overview</h2>
+    <section class="intro">
 
-        <p>
-            Experiment 15 demonstrates backend web development using
-            Django. A To-Do application is implemented using Django's
-            project and application architecture with SQLite database
-            integration.
-        </p>
-    </div>
-
-
-    <div class="section">
-        <h2>⚙️ Technologies Used</h2>
-
-        <ul class="features">
-            <li>Python</li>
-            <li>Django</li>
-            <li>SQLite Database</li>
-            <li>HTML</li>
-            <li>Django Templates</li>
-        </ul>
-    </div>
-
-
-    <div class="section">
-        <h2>📂 Project Structure</h2>
-
-        <div class="structure">
-Experiment 15/<br>
-├── todo/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Django Application<br>
-├── todo_project/ &nbsp; Django Project Configuration<br>
-├── db.sqlite3 &nbsp;&nbsp;&nbsp;&nbsp; SQLite Database<br>
-├── manage.py &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Django Management Script<br>
-└── index.html &nbsp;&nbsp;&nbsp;&nbsp; Experiment Presentation Page
-        </div>
-    </div>
-
-
-    <div class="section">
-        <h2>🚀 Running the Django Project</h2>
+        <h2>Django Backend Application</h2>
 
         <p>
-            The Django application runs using Django's development server.
+            This experiment demonstrates the development of a
+            To-Do application using Django, Python and SQLite.
         </p>
 
-        <div class="command">
-            python manage.py runserver
-        </div>
+        <p>
+            The source files below show the Django models, views,
+            URL configuration, templates and project configuration.
+        </p>
 
         <div class="note">
-            <strong>Note:</strong> GitHub Pages hosts static websites only.
-            Django requires a Python server, so the backend application
-            cannot execute directly on GitHub Pages. This page documents
-            the Django implementation included in the repository.
+            <strong>Note:</strong>
+            Django is a server-side framework and cannot execute
+            directly on GitHub Pages. The complete source code of
+            the application can be inspected below.
         </div>
+
+    </section>
+
+
+    <h2 class="section-title">Django Templates</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Task List Template</h3>
+
+            <div class="filename">
+                todo/templates/todo/task_list.html
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('todo/templates/todo/task_list.html')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h3>Add Task Template</h3>
+
+            <div class="filename">
+                todo/templates/todo/add_task.html
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('todo/templates/todo/add_task.html')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
     </div>
 
 
-    <div class="section">
-        <h2>🎯 Learning Outcome</h2>
+    <h2 class="section-title">Django Application</h2>
 
-        <p>
-            This experiment demonstrates the structure of a Django project,
-            creation of a Django application, database integration using
-            SQLite, and development of a server-side web application.
-        </p>
+    <div class="grid">
+
+        <div class="card">
+            <h3>Models</h3>
+
+            <div class="filename">
+                todo/models.py
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('todo/models.py')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h3>Views</h3>
+
+            <div class="filename">
+                todo/views.py
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('todo/views.py')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h3>Application URLs</h3>
+
+            <div class="filename">
+                todo/urls.py
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('todo/urls.py')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h3>Django Admin</h3>
+
+            <div class="filename">
+                todo/admin.py
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('todo/admin.py')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
     </div>
 
-</div>
+
+    <h2 class="section-title">Django Project Configuration</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Project Settings</h3>
+
+            <div class="filename">
+                todo_project/settings.py
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('todo_project/settings.py')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h3>Project URLs</h3>
+
+            <div class="filename">
+                todo_project/urls.py
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('todo_project/urls.py')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h3>Django Manager</h3>
+
+            <div class="filename">
+                manage.py
+            </div>
+
+            <button class="button code-button"
+                onclick="showCode('manage.py')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- SOURCE CODE VIEWER -->
+
+    <section id="codeViewer">
+
+        <div class="viewer-header">
+
+            <h2 id="codeTitle">
+                Source Code
+            </h2>
+
+            <button
+                class="close-button"
+                onclick="closeCode()">
+                ✕ Close Code
+            </button>
+
+        </div>
+
+        <pre><code id="sourceCode"></code></pre>
+
+    </section>
+
+</main>
+
 
 <footer>
-    Experiment 15 | Backend Development | Raj Tanay Singh
+    Experiment 15 | Django To-Do Application | Raj Tanay Singh
 </footer>
+
+
+<script>
+
+async function showCode(file) {
+
+    const viewer =
+        document.getElementById("codeViewer");
+
+    const title =
+        document.getElementById("codeTitle");
+
+    const source =
+        document.getElementById("sourceCode");
+
+    viewer.style.display = "block";
+
+    title.textContent =
+        "Source Code — " + file;
+
+    source.textContent =
+        "Loading actual source code...";
+
+    try {
+
+        const response = await fetch(file);
+
+        if (!response.ok) {
+            throw new Error(
+                "Unable to load " + file
+            );
+        }
+
+        const code =
+            await response.text();
+
+        source.textContent = code;
+
+    }
+
+    catch (error) {
+
+        source.textContent =
+            "Error loading source code: "
+            + error.message;
+
+    }
+
+    viewer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+
+function closeCode() {
+
+    document
+        .getElementById("codeViewer")
+        .style.display = "none";
+
+}
+
+</script>
 
 </body>
 </html>

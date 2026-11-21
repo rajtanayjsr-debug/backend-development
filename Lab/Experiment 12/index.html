@@ -3,110 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiment 12 | Backend Development</title>
+    <title>Experiment 12 - Forms & Backend Integration</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background: #0d1117;
-            color: #e6edf3;
+            background: #f6f8fa;
+            color: #1f2328;
         }
 
         header {
-            background: #161b22;
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 1px solid #30363d;
+            background: #24292f;
+            color: white;
+            padding: 35px 20px;
+        }
+
+        header .content {
+            max-width: 1100px;
+            margin: auto;
         }
 
         header h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
         }
 
         header p {
-            color: #8b949e;
+            margin: 0;
+            color: #d0d7de;
         }
 
         nav {
-            background: #010409;
-            padding: 18px;
-            text-align: center;
+            background: white;
+            border-bottom: 1px solid #d0d7de;
+            padding: 15px 20px;
+        }
+
+        nav div {
+            max-width: 1100px;
+            margin: auto;
         }
 
         nav a {
-            color: #58a6ff;
             text-decoration: none;
+            color: #0969da;
             font-weight: bold;
-            margin: 0 15px;
+            margin-right: 25px;
         }
 
-        .container {
-            max-width: 900px;
+        main {
+            max-width: 1100px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 35px 20px;
         }
 
-        .container h2 {
+        .intro {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 25px;
             margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            margin-top: 0;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 28px;
-            transition: 0.25s;
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 22px;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #58a6ff;
+        .card h2 {
+            margin-top: 0;
+            font-size: 21px;
         }
 
-        .card h3 {
-            color: #58a6ff;
-            margin-bottom: 12px;
+        .filename {
+            background: #f6f8fa;
+            border-radius: 5px;
+            padding: 9px 10px;
+            font-family: monospace;
+            margin-bottom: 18px;
         }
 
-        .card p {
-            color: #8b949e;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
-        .btn {
+        .button {
             display: inline-block;
-            background: #238636;
-            color: white;
-            padding: 10px 16px;
-            text-decoration: none;
+            border: none;
             border-radius: 6px;
+            padding: 10px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .output {
+            background: #1f883d;
+            color: white;
+        }
+
+        .code-button {
+            background: #0969da;
+            color: white;
+        }
+
+        #codeViewer {
+            display: none;
+            margin-top: 35px;
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .viewer-header {
+            background: #24292f;
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .viewer-header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .close-button {
+            background: #cf222e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 13px;
+            cursor: pointer;
             font-weight: bold;
         }
 
-        .btn:hover {
-            background: #2ea043;
+        pre {
+            margin: 0;
+            padding: 25px;
+            background: #0d1117;
+            color: #e6edf3;
+            overflow: auto;
+            max-height: 650px;
+            white-space: pre;
+            line-height: 1.55;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
-            color: #8b949e;
-            border-top: 1px solid #30363d;
             margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #d0d7de;
+            color: #57606a;
         }
     </style>
 </head>
@@ -114,40 +187,180 @@
 <body>
 
 <header>
-    <h1>🧪 Experiment 12</h1>
-    <p>Forms & Backend Development</p>
+    <div class="content">
+        <h1>Experiment 12: Forms & Backend Integration</h1>
+        <p>Backend Development Laboratory</p>
+    </div>
 </header>
 
 <nav>
-    <a href="../../index.html">Home</a>
-    <a href="../index.html">← Laboratory</a>
+    <div>
+        <a href="../index.html">← All Experiments</a>
+        <a href="../../index.html">Home</a>
+    </div>
 </nav>
 
-<div class="container">
+<main>
 
-    <h2>Experiment Tasks</h2>
+    <section class="intro">
+        <h2>Experiment Work</h2>
+
+        <p>
+            This experiment demonstrates HTML forms, student form
+            implementation, JavaScript and backend-related application files.
+        </p>
+
+        <p>
+            Click <strong>View Output</strong> to open the working webpage
+            and <strong>View Code</strong> to inspect the actual source code.
+        </p>
+    </section>
 
     <div class="grid">
 
         <div class="card">
-            <h3>Form</h3>
-            <p>View the form implementation for Experiment 12.</p>
-            <a class="btn" href="form.html">Open Form →</a>
+            <h2>Form</h2>
+            <div class="filename">form.html</div>
+
+            <div class="buttons">
+                <a class="button output"
+                   href="form.html"
+                   target="_blank">
+                    ▶ View Output
+                </a>
+
+                <button class="button code-button"
+                        onclick="showCode('form.html')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
         </div>
 
+
         <div class="card">
-            <h3>Student Form</h3>
-            <p>View the student form implementation.</p>
-            <a class="btn" href="student-form.html">Open Student Form →</a>
+            <h2>Student Form</h2>
+            <div class="filename">student-form.html</div>
+
+            <div class="buttons">
+                <a class="button output"
+                   href="student-form.html"
+                   target="_blank">
+                    ▶ View Output
+                </a>
+
+                <button class="button code-button"
+                        onclick="showCode('student-form.html')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h2>Application Logic</h2>
+            <div class="filename">app.js</div>
+
+            <button class="button code-button"
+                    onclick="showCode('app.js')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h2>Client-Side Script</h2>
+            <div class="filename">script.js</div>
+
+            <button class="button code-button"
+                    onclick="showCode('script.js')">
+                &lt;/&gt; View Code
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h2>Project Configuration</h2>
+            <div class="filename">package.json</div>
+
+            <button class="button code-button"
+                    onclick="showCode('package.json')">
+                &lt;/&gt; View Code
+            </button>
         </div>
 
     </div>
 
-</div>
+
+    <!-- SOURCE CODE VIEWER -->
+
+    <section id="codeViewer">
+
+        <div class="viewer-header">
+
+            <h2 id="codeTitle">Source Code</h2>
+
+            <button class="close-button"
+                    onclick="closeCode()">
+                ✕ Close Code
+            </button>
+
+        </div>
+
+        <pre><code id="sourceCode"></code></pre>
+
+    </section>
+
+</main>
+
 
 <footer>
     Experiment 12 | Backend Development | Raj Tanay Singh
 </footer>
+
+
+<script>
+
+async function showCode(file) {
+
+    const viewer = document.getElementById("codeViewer");
+    const title = document.getElementById("codeTitle");
+    const source = document.getElementById("sourceCode");
+
+    viewer.style.display = "block";
+
+    title.textContent = "Source Code — " + file;
+    source.textContent = "Loading actual source code...";
+
+    try {
+
+        const response = await fetch(file);
+
+        if (!response.ok) {
+            throw new Error("Unable to load " + file);
+        }
+
+        const code = await response.text();
+
+        source.textContent = code;
+
+    } catch (error) {
+
+        source.textContent =
+            "Error loading source code: " + error.message;
+
+    }
+
+    viewer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+function closeCode() {
+    document.getElementById("codeViewer").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>

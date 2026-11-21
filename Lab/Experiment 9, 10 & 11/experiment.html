@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments 9, 10 & 11 - AJAX, JSON & XML</title>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f6f8fa;
+            color: #1f2328;
+        }
+
+        header {
+            background: #24292f;
+            color: white;
+            padding: 35px 20px;
+        }
+
+        header .content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header h1 { margin: 0 0 10px; }
+
+        header p {
+            margin: 0;
+            color: #d0d7de;
+        }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #d0d7de;
+            padding: 15px 20px;
+        }
+
+        nav div {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0969da;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        .intro {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .intro h2 { margin-top: 0; }
+
+        .part {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .part h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .part-description {
+            color: #57606a;
+            margin-bottom: 20px;
+        }
+
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+
+        .file {
+            background: #f6f8fa;
+            border: 1px solid #d8dee4;
+            border-radius: 7px;
+            padding: 16px;
+        }
+
+        .filename {
+            font-family: monospace;
+            font-weight: bold;
+            margin-bottom: 13px;
+            word-break: break-word;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            border: none;
+            border-radius: 6px;
+            padding: 9px 12px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .output {
+            background: #1f883d;
+            color: white;
+        }
+
+        .code-button {
+            background: #0969da;
+            color: white;
+        }
+
+        #codeViewer {
+            display: none;
+            margin-top: 35px;
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .viewer-header {
+            background: #24292f;
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .viewer-header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .close-button {
+            background: #cf222e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 13px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        pre {
+            margin: 0;
+            padding: 25px;
+            background: #0d1117;
+            color: #e6edf3;
+            overflow: auto;
+            max-height: 650px;
+            white-space: pre;
+            line-height: 1.55;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #d0d7de;
+            color: #57606a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="content">
+        <h1>Experiments 9, 10 & 11</h1>
+        <p>AJAX, JSON, XML and jQuery | Backend Development Laboratory</p>
+    </div>
+</header>
+
+<nav>
+    <div>
+        <a href="../index.html">← All Experiments</a>
+        <a href="../../index.html">Home</a>
+    </div>
+</nav>
+
+<main>
+
+    <section class="intro">
+        <h2>Experiment Work</h2>
+
+        <p>
+            These experiments demonstrate data handling using JSON and XML,
+            asynchronous data retrieval using the Fetch API, jQuery AJAX,
+            and integration of these concepts into a final website.
+        </p>
+
+        <p>
+            Use <strong>View Output</strong> to run a webpage and
+            <strong>View Code</strong> to inspect the actual source files.
+        </p>
+    </section>
+
+
+    <!-- PART A -->
+
+    <section class="part">
+
+        <h2>Part A — Project Structure</h2>
+        <p class="part-description">
+            Initial project structure and data files.
+        </p>
+
+        <div class="file-grid">
+
+            <div class="file">
+                <div class="filename">index.html</div>
+                <div class="buttons">
+                    <a class="button output"
+                       href="Part A - Project Structure/index.html"
+                       target="_blank">▶ View Output</a>
+
+                    <button class="button code-button"
+                        onclick="showCode('Part A - Project Structure/index.html')">
+                        &lt;/&gt; View Code
+                    </button>
+                </div>
+            </div>
+
+            <div class="file">
+                <div class="filename">app.js</div>
+                <button class="button code-button"
+                    onclick="showCode('Part A - Project Structure/app.js')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">style.css</div>
+                <button class="button code-button"
+                    onclick="showCode('Part A - Project Structure/style.css')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.json</div>
+                <button class="button code-button"
+                    onclick="showCode('Part A - Project Structure/students.json')">
+                    &lt;/&gt; View JSON
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.xml</div>
+                <button class="button code-button"
+                    onclick="showCode('Part A - Project Structure/students.xml')">
+                    &lt;/&gt; View XML
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PART B -->
+
+    <section class="part">
+
+        <h2>Part B — Data Sources</h2>
+        <p class="part-description">
+            Student information represented using JSON and XML.
+        </p>
+
+        <div class="file-grid">
+
+            <div class="file">
+                <div class="filename">students.json</div>
+                <button class="button code-button"
+                    onclick="showCode('Part B - Data Sources/students.json')">
+                    &lt;/&gt; View JSON
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.xml</div>
+                <button class="button code-button"
+                    onclick="showCode('Part B - Data Sources/students.xml')">
+                    &lt;/&gt; View XML
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PART C -->
+
+    <section class="part">
+
+        <h2>Part C — Fetch JSON</h2>
+        <p class="part-description">
+            Retrieving and displaying JSON data using the Fetch API.
+        </p>
+
+        <div class="file-grid">
+
+            <div class="file">
+                <div class="filename">index.html</div>
+                <div class="buttons">
+                    <a class="button output"
+                       href="Part C - Fetch JSON/index.html"
+                       target="_blank">▶ View Output</a>
+
+                    <button class="button code-button"
+                        onclick="showCode('Part C - Fetch JSON/index.html')">
+                        &lt;/&gt; View Code
+                    </button>
+                </div>
+            </div>
+
+            <div class="file">
+                <div class="filename">app.js</div>
+                <button class="button code-button"
+                    onclick="showCode('Part C - Fetch JSON/app.js')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">style.css</div>
+                <button class="button code-button"
+                    onclick="showCode('Part C - Fetch JSON/style.css')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.json</div>
+                <button class="button code-button"
+                    onclick="showCode('Part C - Fetch JSON/students.json')">
+                    &lt;/&gt; View JSON
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PART D -->
+
+    <section class="part">
+
+        <h2>Part D — Fetch XML</h2>
+        <p class="part-description">
+            Retrieving and processing XML data.
+        </p>
+
+        <div class="file-grid">
+
+            <div class="file">
+                <div class="filename">index.html</div>
+                <div class="buttons">
+                    <a class="button output"
+                       href="Part D - Fetch XML/index.html"
+                       target="_blank">▶ View Output</a>
+
+                    <button class="button code-button"
+                        onclick="showCode('Part D - Fetch XML/index.html')">
+                        &lt;/&gt; View Code
+                    </button>
+                </div>
+            </div>
+
+            <div class="file">
+                <div class="filename">app.js</div>
+                <button class="button code-button"
+                    onclick="showCode('Part D - Fetch XML/app.js')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">style.css</div>
+                <button class="button code-button"
+                    onclick="showCode('Part D - Fetch XML/style.css')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.json</div>
+                <button class="button code-button"
+                    onclick="showCode('Part D - Fetch XML/students.json')">
+                    &lt;/&gt; View JSON
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.xml</div>
+                <button class="button code-button"
+                    onclick="showCode('Part D - Fetch XML/students.xml')">
+                    &lt;/&gt; View XML
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PART E -->
+
+    <section class="part">
+
+        <h2>Part E — jQuery AJAX</h2>
+        <p class="part-description">
+            Asynchronous data retrieval using jQuery AJAX.
+        </p>
+
+        <div class="file-grid">
+
+            <div class="file">
+                <div class="filename">index.html</div>
+                <div class="buttons">
+                    <a class="button output"
+                       href="Part E - jQuery AJAX/index.html"
+                       target="_blank">▶ View Output</a>
+
+                    <button class="button code-button"
+                        onclick="showCode('Part E - jQuery AJAX/index.html')">
+                        &lt;/&gt; View Code
+                    </button>
+                </div>
+            </div>
+
+            <div class="file">
+                <div class="filename">app.js</div>
+                <button class="button code-button"
+                    onclick="showCode('Part E - jQuery AJAX/app.js')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">style.css</div>
+                <button class="button code-button"
+                    onclick="showCode('Part E - jQuery AJAX/style.css')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.json</div>
+                <button class="button code-button"
+                    onclick="showCode('Part E - jQuery AJAX/students.json')">
+                    &lt;/&gt; View JSON
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PART F -->
+
+    <section class="part">
+
+        <h2>Part F — Final Website</h2>
+        <p class="part-description">
+            Final integrated implementation of the experiment.
+        </p>
+
+        <div class="file-grid">
+
+            <div class="file">
+                <div class="filename">index.html</div>
+                <div class="buttons">
+                    <a class="button output"
+                       href="Part F - Final Website/index.html"
+                       target="_blank">▶ View Output</a>
+
+                    <button class="button code-button"
+                        onclick="showCode('Part F - Final Website/index.html')">
+                        &lt;/&gt; View Code
+                    </button>
+                </div>
+            </div>
+
+            <div class="file">
+                <div class="filename">app.js</div>
+                <button class="button code-button"
+                    onclick="showCode('Part F - Final Website/app.js')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">style.css</div>
+                <button class="button code-button"
+                    onclick="showCode('Part F - Final Website/style.css')">
+                    &lt;/&gt; View Code
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.json</div>
+                <button class="button code-button"
+                    onclick="showCode('Part F - Final Website/students.json')">
+                    &lt;/&gt; View JSON
+                </button>
+            </div>
+
+            <div class="file">
+                <div class="filename">students.xml</div>
+                <button class="button code-button"
+                    onclick="showCode('Part F - Final Website/students.xml')">
+                    &lt;/&gt; View XML
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SOURCE CODE VIEWER -->
+
+    <section id="codeViewer">
+
+        <div class="viewer-header">
+
+            <h2 id="codeTitle">Source Code</h2>
+
+            <button class="close-button"
+                    onclick="closeCode()">
+                ✕ Close Code
+            </button>
+
+        </div>
+
+        <pre><code id="sourceCode"></code></pre>
+
+    </section>
+
+</main>
+
+
+<footer>
+    Experiments 9, 10 & 11 | Backend Development | Raj Tanay Singh
+</footer>
+
+
+<script>
+
+async function showCode(file) {
+
+    const viewer = document.getElementById("codeViewer");
+    const title = document.getElementById("codeTitle");
+    const source = document.getElementById("sourceCode");
+
+    viewer.style.display = "block";
+
+    title.textContent = "Source Code — " + file;
+    source.textContent = "Loading actual source code...";
+
+    try {
+
+        const response = await fetch(file);
+
+        if (!response.ok) {
+            throw new Error("Unable to load " + file);
+        }
+
+        const code = await response.text();
+
+        source.textContent = code;
+
+    } catch (error) {
+
+        source.textContent =
+            "Error loading source code: " + error.message;
+
+    }
+
+    viewer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+
+function closeCode() {
+    document.getElementById("codeViewer").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
