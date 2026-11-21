@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory - Backend Development</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f6f8fa;
+            color: #1f2328;
+        }
+
+        header {
+            background: #24292f;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        header .content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d0d7de;
+        }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #d0d7de;
+            padding: 15px 20px;
+        }
+
+        nav div {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav a {
+            color: #0969da;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .intro {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .number {
+            color: #57606a;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .card h2 {
+            margin: 0 0 12px;
+        }
+
+        .card p {
+            color: #57606a;
+            line-height: 1.6;
+            min-height: 70px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .primary {
+            background: #0969da;
+            color: white;
+        }
+
+        .output {
+            background: #1f883d;
+            color: white;
+        }
+
+        #codeViewer {
+            display: none;
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 35px;
+        }
+
+        .viewer-header {
+            background: #24292f;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .viewer-header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .close {
+            background: #cf222e;
+            color: white;
+            border: none;
+            padding: 8px 13px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        pre {
+            margin: 0;
+            padding: 25px;
+            background: #0d1117;
+            color: #e6edf3;
+            overflow: auto;
+            max-height: 650px;
+            line-height: 1.55;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #d0d7de;
+            color: #57606a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="content">
+        <h1>Backend Development — Theory</h1>
+        <p>Theory Assignments, Projects and Implementations</p>
+    </div>
+</header>
+
+<nav>
+    <div>
+        <a href="../index.html">← Home</a>
+    </div>
+</nav>
+
+<main>
+
+    <section class="intro">
+        <h2>Theory Work</h2>
+
+        <p>
+            This section contains theory assignments and implementations
+            completed as part of the Backend Development course.
+            Use the options below to view assignments, source code,
+            reports and available demonstrations.
+        </p>
+    </section>
+
+    <div class="grid">
+
+        <!-- POSTGRESQL JSONB -->
+
+        <div class="card">
+
+            <div class="number">ASSIGNMENT 2</div>
+
+            <h2>PostgreSQL & JSONB</h2>
+
+            <p>
+                PostgreSQL as SQL and NoSQL, JSONB data,
+                queries and database implementation concepts.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn output"
+                   href="PostgreSQL-JSONB-Assignment_2/index.html">
+                    📄 View Assignment
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- UNIT 1 -->
+
+        <div class="card">
+
+            <div class="number">UNIT 1</div>
+
+            <h2>Node.js Server</h2>
+
+            <p>
+                Basic backend server implementation demonstrating
+                Node.js server-side development concepts.
+            </p>
+
+            <div class="buttons">
+
+                <button class="btn primary"
+                        onclick="showCode('Unit_1/server.js')">
+                    &lt;/&gt; View Code
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- UNIT 3 DJANGO -->
+
+        <div class="card">
+
+            <div class="number">UNIT 3</div>
+
+            <h2>Django Student System</h2>
+
+            <p>
+                Django student management project including models,
+                views, URLs, middleware and project configuration.
+            </p>
+
+            <div class="buttons">
+
+                <button class="btn primary"
+                        onclick="showCode('unit_3Djangoproject/student_system/students/models.py')">
+                    Models
+                </button>
+
+                <button class="btn primary"
+                        onclick="showCode('unit_3Djangoproject/student_system/students/views.py')">
+                    Views
+                </button>
+
+                <button class="btn primary"
+                        onclick="showCode('unit_3Djangoproject/student_system/students/urls.py')">
+                    URLs
+                </button>
+
+                <button class="btn primary"
+                        onclick="showCode('unit_3Djangoproject/student_system/students/middleware.py')">
+                    Middleware
+                </button>
+
+                <button class="btn primary"
+                        onclick="showCode('unit_3Djangoproject/student_system/student_system/settings.py')">
+                    Settings
+                </button>
+
+                <button class="btn primary"
+                        onclick="showCode('unit_3Djangoproject/student_system/manage.py')">
+                    manage.py
+                </button>
+
+                <button class="btn primary"
+                        onclick="showCode('unit_3Djangoproject/student_system/requirements.txt')">
+                    Requirements
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- WEB STORAGE -->
+
+        <div class="card">
+
+            <div class="number">WEB STORAGE ASSIGNMENT</div>
+
+            <h2>Web Storage</h2>
+
+            <p>
+                Browser Web Storage implementation using HTML,
+                CSS and JavaScript.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn output"
+                   href="Web-Storage-Assignment_1/index.html"
+                   target="_blank">
+                    ▶ View Output
+                </a>
+
+                <button class="btn primary"
+                        onclick="showCode('Web-Storage-Assignment_1/index.html')">
+                    HTML
+                </button>
+
+                <button class="btn primary"
+                        onclick="showCode('Web-Storage-Assignment_1/script.js')">
+                    JavaScript
+                </button>
+
+                <button class="btn primary"
+                        onclick="showCode('Web-Storage-Assignment_1/style.css')">
+                    CSS
+                </button>
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SOURCE CODE VIEWER -->
+
+    <section id="codeViewer">
+
+        <div class="viewer-header">
+
+            <h2 id="codeTitle">Source Code</h2>
+
+            <button class="close"
+                    onclick="closeCode()">
+                ✕ Close
+            </button>
+
+        </div>
+
+        <pre><code id="sourceCode"></code></pre>
+
+    </section>
+
+</main>
+
+
+<footer>
+    Backend Development Theory | Raj Tanay Singh
+</footer>
+
+
+<script>
+
+async function showCode(file) {
+
+    const viewer =
+        document.getElementById("codeViewer");
+
+    const title =
+        document.getElementById("codeTitle");
+
+    const source =
+        document.getElementById("sourceCode");
+
+    viewer.style.display = "block";
+
+    title.textContent = file;
+
+    source.textContent = "Loading...";
+
+    try {
+
+        const response = await fetch(file);
+
+        if (!response.ok) {
+            throw new Error(
+                "Unable to load file: " + file
+            );
+        }
+
+        const code = await response.text();
+
+        source.textContent = code;
+
+    } catch (error) {
+
+        source.textContent =
+            "Error loading file: " +
+            error.message;
+
+    }
+
+    viewer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+
+function closeCode() {
+
+    document
+        .getElementById("codeViewer")
+        .style.display = "none";
+
+}
+
+</script>
+
+</body>
+</html>

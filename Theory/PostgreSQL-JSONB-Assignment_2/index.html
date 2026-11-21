@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PostgreSQL JSONB - Assignment 2</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f6f8fa;
+            color: #1f2328;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #24292f;
+            color: white;
+            padding: 35px 20px;
+        }
+
+        header div {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d0d7de;
+        }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #d0d7de;
+            padding: 15px 20px;
+        }
+
+        nav div {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        nav a {
+            color: #0969da;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        #assignment {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            padding: 35px;
+        }
+
+        #assignment h1,
+        #assignment h2,
+        #assignment h3 {
+            border-bottom: 1px solid #d8dee4;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        pre {
+            background: #0d1117;
+            color: #e6edf3;
+            padding: 18px;
+            border-radius: 7px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        p code {
+            background: #eff1f3;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #d0d7de;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f6f8fa;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #57606a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #57606a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>PostgreSQL JSONB — Assignment 2</h1>
+        <p>Backend Development Theory</p>
+    </div>
+</header>
+
+<nav>
+    <div>
+        <a href="../index.html">← Theory</a>
+        <a href="../../index.html">Home</a>
+    </div>
+</nav>
+
+<main>
+
+    <div id="assignment">
+        <div class="loading">Loading assignment...</div>
+    </div>
+
+</main>
+
+<footer>
+    PostgreSQL JSONB Assignment 2 | Raj Tanay Singh
+</footer>
+
+<script>
+async function loadAssignment() {
+
+    const container =
+        document.getElementById("assignment");
+
+    try {
+
+        const response =
+            await fetch("590014851_assignment2.md");
+
+        if (!response.ok) {
+            throw new Error("Assignment file could not be loaded.");
+        }
+
+        const markdown =
+            await response.text();
+
+        container.innerHTML =
+            marked.parse(markdown);
+
+    } catch (error) {
+
+        container.innerHTML =
+            "<h2>Unable to load assignment</h2>" +
+            "<p>" + error.message + "</p>";
+
+    }
+}
+
+loadAssignment();
+</script>
+
+</body>
+</html>
