@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 13 - Mongoose Demo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f6f8fa;
+            color: #1f2328;
+        }
+
+        header {
+            background: #24292f;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d0d7de;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .status {
+            display: inline-block;
+            background: #dafbe1;
+            color: #116329;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tech div {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .note {
+            background: #fff8c5;
+            border: 1px solid #d4a72c;
+            border-radius: 8px;
+            padding: 18px;
+            line-height: 1.6;
+        }
+
+        .back {
+            display: inline-block;
+            background: #0969da;
+            color: white;
+            text-decoration: none;
+            padding: 11px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #57606a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Experiment 13: MongoDB & Mongoose</h1>
+    <p>Backend Development Laboratory</p>
+</header>
+
+<main>
+
+    <div class="card">
+
+        <div class="status">✓ Frontend Preview</div>
+
+        <h2>Mongoose Demo Application</h2>
+
+        <p>
+            This experiment demonstrates database connectivity and
+            backend development using Node.js, MongoDB and Mongoose.
+        </p>
+
+        <div class="tech">
+            <div>Node.js</div>
+            <div>MongoDB</div>
+            <div>Mongoose</div>
+            <div>Express.js</div>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Implementation</h2>
+
+        <p>
+            The application uses a Node.js server with Mongoose
+            to communicate with a MongoDB database.
+        </p>
+
+        <p>
+            The complete backend implementation, including
+            <strong>server.js</strong> and
+            <strong>package.json</strong>, is available from the
+            Experiment 13 source-code viewer.
+        </p>
+
+    </div>
+
+    <div class="note">
+
+        <strong>Preview Notice:</strong><br><br>
+
+        This is the static frontend preview of the experiment.
+        MongoDB database operations require the Node.js server and
+        MongoDB service to be running and therefore cannot execute
+        directly through GitHub Pages.
+
+    </div>
+
+    <a class="back" href="../experiment.html">
+        ← Back to Experiment 13
+    </a>
+
+</main>
+
+<footer>
+    Experiment 13 | MongoDB & Mongoose | Raj Tanay Singh
+</footer>
+
+</body>
+</html>
